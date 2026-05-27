@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="theme-color" content="#0A1628">
+     <meta name="color-scheme" content="light dark">
+     <title>Kiwitech Medical | World-Class Healthcare in China</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & TOKENS ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+             --color-bg: #FAFBFC;
+             --color-surface: #FFFFFF;
+             --color-surface-alt: #F8FAFB;
+             --color-surface-warm: #FDFBF7;
+             --color-bg-dark: #0A1628;
+             --color-surface-dark: #111D35;
+             --color-surface-dark-alt: #162240;
+             --color-primary: #2563EB;
+             --color-primary-light: #3B82F6;
+             --color-primary-dark: #1D4ED8;
+             --color-primary-glow: rgba(37, 99, 235, 0.15);
+             --color-accent: #06B6D4;
+             --color-accent-light: #22D3EE;
+             --color-accent-gold: #F59E0B;
+             --color-accent-gold-light: #FBBF24;
+             --color-accent-emerald: #10B981;
+             --color-accent-rose: #F43F5E;
+             --color-accent-violet: #8B5CF6;
+             --color-text: #0F172A;
+             --color-text-secondary: #475569;
+             --color-text-muted: #94A3B8;
+             --color-text-light: #E2E8F0;
+             --color-text-white: #FFFFFF;
+             --color-border: #E2E8F0;
+             --color-border-light: #F1F5F9;
+             --color-border-dark: rgba(255,255,255,0.08);
+             --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+             --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+             --shadow-lg: 0 10px 30px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+             --shadow-xl: 0 20px 50px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05);
+             --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.12);
+             --shadow-glow-cyan: 0 0 40px rgba(6, 182, 212, 0.12);
+             --radius-sm: 8px;
+             --radius-md: 12px;
+             --radius-lg: 16px;
+             --radius-xl: 24px;
+             --radius-full: 9999px;
+             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+             --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+             --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+             --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+             --max-width: 1200px;
+         }
+
+         html { scroll-behavior: smooth; }
+
+         /* Dark mode tokens */
+         @media (prefers-color-scheme: dark) {
+             :root {
+                 --color-bg: #0A1628;
+                 --color-surface: #111D35;
+                 --color-surface-alt: #162240;
+                 --color-surface-warm: #162240;
+                 --color-bg-dark: #060E1E;
+                 --color-surface-dark: #0A1628;
+                 --color-surface-dark-alt: #0F1A30;
+                 --color-text: #E2E8F0;
+                 --color-text-secondary: #94A3B8;
+                 --color-text-muted: #64748B;
+                 --color-border: #1E293B;
+                 --color-border-light: #1E293B;
+             }
+         }
+
+body {
+             font-family: var(--font-sans);
+             line-height: 1.7;
+             color: var(--color-text);
+             background: var(--color-bg);
+             overflow-x: hidden;
+             -webkit-font-smoothing: antialiased;
+             -moz-osx-font-smoothing: grayscale;
+         }
+
+         /* Skip Link */
+         .skip-link {
+             position: absolute; top: -100%; left: 1rem;
+             padding: 0.75rem 1.5rem; background: var(--color-primary); color: #fff;
+             font-weight: 700; font-size: 0.9rem; border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+             z-index: 99999; text-decoration: none; transition: top 0.2s ease;
+         }
+         .skip-link:focus { top: 0; outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+         /* Section base with scroll margin */
+         section[id] { scroll-margin-top: 80px; }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
+        a:hover { color: var(--color-primary-dark); }
+
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        .sr-only {
+            position: absolute; width: 1px; height: 1px;
+            padding: 0; margin: -1px; overflow: hidden;
+            clip: rect(0,0,0,0); border: 0;
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            padding: 0.5rem 1.2rem;
+            background: var(--color-primary-glow);
+            border-radius: var(--radius-full);
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+/* ===== ANIMATIONS ===== */
+         .reveal {
+             opacity: 0;
+             transform: translateY(24px);
+             transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                         transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+             will-change: opacity, transform;
+         }
+         .reveal.visible {
+             opacity: 1;
+             transform: translateY(0);
+         }
+         .reveal-delay-1 { transition-delay: 0.08s; }
+         .reveal-delay-2 { transition-delay: 0.16s; }
+         .reveal-delay-3 { transition-delay: 0.24s; }
+         .reveal-delay-4 { transition-delay: 0.32s; }
+         .reveal-delay-5 { transition-delay: 0.4s; }
+         .reveal-delay-6 { transition-delay: 0.48s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-12px) rotate(1deg); }
+            66% { transform: translateY(-6px) rotate(-1deg); }
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed; inset: 0; z-index: 99999;
+            background: var(--color-bg-dark);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column; gap: 1.5rem;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        #preloader.fade-out { opacity: 0; visibility: hidden; }
+        .preloader-logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text-white);
+            letter-spacing: 0.05em;
+        }
+        .preloader-logo span { color: var(--color-accent); }
+        .preloader-bar {
+            width: 60px; height: 2px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px; overflow: hidden;
+            position: relative;
+        }
+        .preloader-bar::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: 2px;
+            animation: shimmer 1.2s ease-in-out infinite;
+        }
+
+        /* ===== CURSOR DOT ===== */
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            position: fixed; pointer-events: none;
+            z-index: 99998;
+            transition: transform 0.1s ease, opacity 0.3s ease;
+            mix-blend-mode: difference;
+        }
+
+/* ===== HEADER ===== */
+         .site-header {
+             position: fixed; top: 0; left: 0; right: 0;
+             z-index: 1000;
+             background: transparent;
+             transition: all var(--transition);
+             padding: 0.75rem 0;
+             contain: layout style;
+         }
+        .site-header.scrolled {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+        }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-text-white);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        .site-header.scrolled .logo { color: var(--color-text); }
+        .logo-icon {
+            width: 36px; height: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+            transition: transform var(--transition-bounce);
+        }
+        .logo:hover .logo-icon { transform: rotate(8deg) scale(1.05); }
+        .logo-text { letter-spacing: -0.02em; }
+        .logo-accent { color: var(--color-accent); }
+
+/* Desktop Nav */
+         .desktop-nav {
+             display: flex;
+             align-items: center;
+             gap: 0.25rem;
+         }
+         .desktop-nav a {
+             color: rgba(255,255,255,0.8);
+             text-decoration: none;
+             font-size: 0.88rem;
+             font-weight: 500;
+             padding: 0.5rem 1rem;
+             border-radius: var(--radius-full);
+             transition: all var(--transition);
+             position: relative;
+             min-height: 44px;
+             display: inline-flex;
+             align-items: center;
+         }
+         .site-header.scrolled .desktop-nav a {
+             color: var(--color-text-secondary);
+         }
+         .desktop-nav a:hover,
+         .desktop-nav a.active {
+             color: var(--color-primary);
+             background: var(--color-primary-glow);
+         }
+         .site-header.scrolled .desktop-nav a:hover,
+         .site-header.scrolled .desktop-nav a.active {
+             background: rgba(37, 99, 235, 0.08);
+         }
+        .desktop-nav .nav-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.15);
+            margin: 0 0.5rem;
+            border-radius: 1px;
+        }
+        .site-header.scrolled .nav-divider {
+            background: rgba(0,0,0,0.08);
+        }
+
+/* CTA Button in Nav */
+         .nav-cta {
+             display: inline-flex;
+             align-items: center;
+             gap: 0.4rem;
+             padding: 0.6rem 1.4rem;
+             background: var(--color-accent);
+             color: var(--color-text-white);
+             font-size: 0.85rem;
+             font-weight: 600;
+             border-radius: var(--radius-full);
+             border: none;
+             cursor: pointer;
+             transition: all var(--transition);
+             text-decoration: none;
+             min-height: 44px;
+             box-shadow: 0 2px 12px rgba(6, 182, 212, 0.25);
+         }
+        .nav-cta:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-glow-cyan);
+        }
+        .nav-cta-arrow {
+            transition: transform var(--transition);
+            font-size: 0.85rem;
+        }
+        .nav-cta:hover .nav-cta-arrow {
+            transform: translateX(3px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            border: none;
+            background: transparent;
+            z-index: 1001;
+        }
+        .mobile-menu-btn span {
+            width: 22px; height: 2px;
+            background: var(--color-text-white);
+            border-radius: 2px;
+            transition: all var(--transition);
+            display: block;
+        }
+        .site-header.scrolled .mobile-menu-btn span {
+            background: var(--color-text);
+        }
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer-overlay {
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition);
+            backdrop-filter: blur(4px);
+        }
+        .mobile-drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-drawer {
+            position: fixed; top: 0; right: -320px;
+            width: 300px; height: 100%;
+            background: var(--color-surface);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: var(--shadow-xl);
+            display: flex; flex-direction: column;
+        }
+        .mobile-drawer.active { right: 0; }
+        .mobile-drawer-header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+        .mobile-drawer-header h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .mobile-drawer-close {
+            background: none; border: none; font-size: 1.4rem;
+            cursor: pointer; color: var(--color-text-muted);
+            padding: 4px; border-radius: var(--radius-sm);
+            transition: all var(--transition);
+        }
+        .mobile-drawer-close:hover {
+            background: var(--color-border-light);
+            color: var(--color-text);
+        }
+        .mobile-drawer-nav {
+            flex: 1; padding: 0.5rem 0; overflow-y: auto;
+        }
+        .mobile-drawer-nav a {
+            display: block;
+            padding: 0.9rem 1.5rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all var(--transition);
+        }
+        .mobile-drawer-nav a:hover,
+        .mobile-drawer-nav a.active {
+            color: var(--color-primary);
+            background: var(--color-primary-glow);
+            border-left-color: var(--color-primary);
+        }
+
+/* ===== HERO ===== */
+         .hero-orbs {
+             position: absolute; inset: 0;
+             pointer-events: none;
+             overflow: hidden;
+             will-change: transform;
+         }
+         .hero-orb {
+             position: absolute;
+             border-radius: 50%;
+             border: 1px solid rgba(255,255,255,0.05);
+             animation: float 20s ease-in-out infinite;
+             will-change: transform;
+         }
+
+        .hero-bg-grid {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 500px; height: 500px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .hero-glow-1 {
+            top: -10%; right: -5%;
+            background: radial-gradient(circle, var(--color-primary), transparent 70%);
+        }
+        .hero-glow-2 {
+            bottom: -15%; left: -5%;
+            background: radial-gradient(circle, var(--color-accent), transparent 70%);
+        }
+        .hero-glow-3 {
+            top: 40%; left: 40%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, var(--color-accent-gold), transparent 70%);
+            opacity: 0.08;
+        }
+
+        /* Floating orbs */
+        .hero-orbs {
+            position: absolute; inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.05);
+            animation: float 20s ease-in-out infinite;
+        }
+        .hero-orb:nth-child(1) {
+            width: 300px; height: 300px;
+            top: 10%; right: -5%;
+            background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.08), transparent 70%);
+            animation-delay: 0s;
+        }
+        .hero-orb:nth-child(2) {
+            width: 200px; height: 200px;
+            bottom: 20%; left: -3%;
+            background: radial-gradient(circle at 70% 70%, rgba(6,182,212,0.06), transparent 70%);
+            animation-delay: -7s;
+        }
+        .hero-orb:nth-child(3) {
+            width: 150px; height: 150px;
+            top: 60%; right: 30%;
+            background: radial-gradient(circle at 50% 50%, rgba(245,158,11,0.05), transparent 70%);
+            animation-delay: -14s;
+        }
+        .hero-orb:nth-child(4) {
+            width: 100px; height: 100px;
+            top: 20%; left: 40%;
+            background: radial-gradient(circle at 50% 50%, rgba(139,92,246,0.04), transparent 70%);
+            animation-delay: -10s;
+        }
+
+        .hero-pulse-ring {
+            position: absolute;
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            border: 1px solid rgba(37,99,235,0.15);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse-ring 4s ease-out infinite;
+            pointer-events: none;
+        }
+        .hero-pulse-ring:nth-child(2) { animation-delay: -1.5s; width: 250px; height: 250px; }
+        .hero-pulse-ring:nth-child(3) { animation-delay: -3s; width: 300px; height: 300px; }
+        @keyframes pulse-ring {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 850px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.4rem;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            margin-bottom: 2.5rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.85);
+            animation: fade-in-up 0.8s ease-out both;
+        }
+        .hero-badge-dot {
+            width: 6px; height: 6px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            color: var(--color-text-white);
+            margin-bottom: 1.8rem;
+            font-weight: 600;
+            line-height: 1.1;
+            animation: fade-in-up 0.8s ease-out 0.1s both;
+        }
+        .hero-content h1 .gradient-text {
+            background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+.hero-content > p {
+             font-size: clamp(1rem, 1.6vw, 1.15rem);
+             color: rgba(255,255,255,0.7);
+             line-height: 1.85;
+             max-width: 620px;
+             margin: 0 auto 3rem;
+             font-weight: 300;
+             animation: fade-in-up 0.8s ease-out 0.2s both;
+         }
+
+         .hero-stats {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             gap: 2.5rem;
+             margin-bottom: 3.5rem;
+             animation: fade-in-up 0.8s ease-out 0.3s both;
+         }
+         .hero-stat {
+             text-align: center;
+             min-width: 0;
+         }
+         .hero-stat-value {
+             font-family: var(--font-sans);
+             font-size: 1.8rem;
+             font-weight: 800;
+             color: var(--color-text-white);
+             line-height: 1;
+             margin-bottom: 0.3rem;
+         }
+         .hero-stat-value span { color: var(--color-accent); }
+         .hero-stat-label {
+             font-size: 0.72rem;
+             color: rgba(255,255,255,0.45);
+             text-transform: uppercase;
+             letter-spacing: 0.1em;
+             font-weight: 500;
+             white-space: nowrap;
+         }
+        .hero-stat-divider {
+            width: 1px; height: 36px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 1px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fade-in-up 0.8s ease-out 0.4s both;
+        }
+.btn {
+             display: inline-flex;
+             align-items: center;
+             gap: 0.5rem;
+             padding: 0.9rem 2rem;
+             border-radius: var(--radius-full);
+             text-decoration: none;
+             font-weight: 600;
+             font-size: 0.95rem;
+             transition: all var(--transition);
+             cursor: pointer;
+             border: none;
+             position: relative;
+             overflow: hidden;
+             min-height: 48px;
+         }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: var(--color-text-white);
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.45);
+        }
+        .btn-primary:hover::after { opacity: 1; }
+        .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.08);
+            color: var(--color-text-white);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .btn-secondary:active { transform: translateY(0) scale(0.98); }
+        .btn-arrow {
+            transition: transform var(--transition);
+            font-size: 1.1rem;
+        }
+        .btn:hover .btn-arrow { transform: translateX(3px); }
+
+.hero-scroll {
+             position: absolute;
+             bottom: 2.5rem;
+             left: 50%;
+             transform: translateX(-50%);
+             z-index: 10;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 0.5rem;
+             color: rgba(255,255,255,0.3);
+             font-size: 0.7rem;
+             font-weight: 600;
+             letter-spacing: 0.1em;
+             text-transform: uppercase;
+             animation: fade-in-up 0.8s ease-out 0.8s both;
+             pointer-events: none;
+             user-select: none;
+         }
+        .hero-scroll-line {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+            animation: scroll-bounce 2s ease-in-out infinite;
+        }
+        @keyframes scroll-bounce {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(8px); opacity: 1; }
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            padding: 8rem 0 10rem;
+            background: var(--color-bg);
+            position: relative;
+        }
+        .about::before {
+            content: '';
+            position: absolute; top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 1px; height: 80px;
+            background: linear-gradient(to bottom, transparent, var(--color-border));
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+        .about-card {
+            background: var(--color-surface);
+            padding: 2.8rem 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .about-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            border-color: rgba(37, 99, 235, 0.1);
+        }
+        .about-card:hover::before { transform: scaleX(1); }
+        .about-card-icon {
+            width: 56px; height: 56px;
+            border-radius: var(--radius-md);
+            background: var(--color-surface-alt);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            transition: transform var(--transition-bounce);
+        }
+        .about-card:hover .about-card-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        .about-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--color-text);
+        }
+        .about-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.75;
+        }
+
+        /* ===== COMPANY ===== */
+        .company {
+            padding: 10rem 0;
+            background: var(--color-surface);
+            position: relative;
+            overflow: hidden;
+        }
+        .company::before {
+            content: '';
+            position: absolute; top: 0; right: 0;
+            width: 50%; height: 100%;
+            background: linear-gradient(135deg, rgba(37,99,235,0.03), transparent);
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        .company-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative; z-index: 1;
+        }
+        .company-image {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--color-border-light);
+            aspect-ratio: 4/5;
+            position: relative;
+        }
+        .company-image::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(37,99,235,0.06), transparent 60%);
+            pointer-events: none;
+        }
+        .company-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .company-image:hover img {
+            transform: scale(1.03);
+        }
+        .company-text .section-label { margin-bottom: 0.75rem; }
+        .company-text .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            margin-bottom: 1.2rem;
+        }
+        .company-text .section-title .highlight {
+            color: var(--color-primary);
+        }
+        .company-text p {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .company-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.2rem;
+            margin-top: 4rem;
+            position: relative; z-index: 1;
+        }
+        .stat-box {
+            text-align: center;
+            padding: 1.8rem 1rem;
+            background: var(--color-surface-alt);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-box::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent-gold), var(--color-accent-gold-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .stat-box:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            background: var(--color-surface);
+        }
+        .stat-box:hover::before { transform: scaleX(1); }
+        .stat-box-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+            font-family: var(--font-sans);
+        }
+        .stat-box-label {
+            color: var(--color-text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* ===== PROBLEM ===== */
+        .problem {
+            padding: 10rem 0;
+            background: linear-gradient(160deg, var(--color-bg-dark), var(--color-surface-dark));
+            color: var(--color-text-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .problem::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(37,99,235,0.08), transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(6,182,212,0.06), transparent 50%),
+                        radial-gradient(ellipse at 60% 80%, rgba(245,158,11,0.04), transparent 50%);
+            pointer-events: none;
+        }
+        .problem .section-title { color: var(--color-text-white); }
+        .problem .section-subtitle { color: rgba(255,255,255,0.6); }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            position: relative; z-index: 1;
+        }
+        .problem-card {
+            background: rgba(255,255,255,0.04);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition);
+        }
+        .problem-card:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+        }
+        .problem-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .problem-card.challenge h3 { color: var(--color-accent-rose); }
+        .problem-card.opportunity h3 { color: var(--color-accent); }
+        .problem-card ul { list-style: none; }
+        .problem-card li {
+            padding: 0.65rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.75);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            line-height: 1.65;
+        }
+        .problem-card li:last-child { border-bottom: none; }
+        .problem-card li::before {
+            content: '';
+            position: absolute; left: 0; top: 1rem;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+        }
+        .challenge li::before { background: var(--color-accent-rose); box-shadow: 0 0 8px rgba(244,63,94,0.4); }
+        .opportunity li::before { background: var(--color-accent); box-shadow: 0 0 8px rgba(6,182,212,0.4); }
+        .problem-bridge {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem 2.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-radius: var(--radius-lg);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            position: relative; z-index: 1;
+            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
+            transition: transform var(--transition);
+        }
+        .problem-bridge:hover { transform: scale(1.02); }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 10rem 0;
+            background: var(--color-bg);
+            position: relative;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            position: relative; z-index: 1;
+        }
+        .service-card {
+            background: var(--color-surface);
+            padding: 2.2rem 1.8rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(37, 99, 235, 0.1);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px; height: 36px;
+            background: var(--color-primary-glow);
+            color: var(--color-primary);
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            margin-bottom: 1.2rem;
+            transition: all var(--transition);
+        }
+        .service-card:hover .service-number {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            transform: scale(1.08);
+        }
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+        .service-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+
+        /* ===== PROCESS ===== */
+        .process {
+            padding: 10rem 0;
+            background: var(--color-surface);
+        }
+        .process-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 28px; left: 30px; right: 30px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: 2px;
+        }
+        .process-step {
+            position: relative;
+            text-align: center;
+            flex: 1;
+        }
+        .process-step-circle {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: var(--color-surface-alt);
+            border: 3px solid var(--color-primary);
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 1;
+            transition: all var(--transition);
+        }
+        .process-step:hover .process-step-circle,
+        .process-step.active .process-step-circle {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 0 0 8px rgba(37,99,235,0.15);
+            transform: scale(1.08);
+        }
+        .process-step h3 {
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        .process-step p {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+        }
+
+        .process-summary {
+            text-align: center;
+            margin-top: 3.5rem;
+            padding: 2rem 2.5rem;
+            background: var(--color-bg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ===== HOSPITALS ===== */
+        .hospitals {
+            padding: 10rem 0;
+            background: var(--color-bg);
+        }
+        .hospitals-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .hospitals-card {
+            background: var(--color-surface);
+            padding: 2.2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+        }
+        .hospitals-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(37,99,235,0.1);
+        }
+        .hospitals-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .city-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.8rem 1rem;
+            background: var(--color-bg);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.7rem;
+            transition: all var(--transition);
+            border: 1px solid transparent;
+        }
+        .city-item:hover {
+            background: var(--color-primary-glow);
+            transform: translateX(4px);
+            border-color: rgba(37,99,235,0.1);
+        }
+        .city-item-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.15rem; }
+        .city-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.15rem; }
+        .city-item p { font-size: 0.82rem; color: var(--color-text-muted); }
+
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
+        }
+        .dept-item {
+            padding: 0.8rem;
+            background: var(--color-bg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--color-text);
+            transition: all var(--transition);
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .dept-item:hover {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+        }
+
+        .cost-banner {
+            margin-top: 2.5rem;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, var(--color-surface-dark), var(--color-bg-dark));
+            border-radius: var(--radius-lg);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        /* ===== TRACK RECORD ===== */
+        .track {
+            padding: 10rem 0;
+            background: var(--color-surface);
+        }
+        .track-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+        .track-card {
+            background: var(--color-surface-alt);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition);
+            border: 1px solid var(--color-border-light);
+        }
+        .track-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .track-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .track-card:hover::before { transform: scaleX(1); }
+        .track-flag { font-size: 2rem; margin-bottom: 0.8rem; }
+        .track-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .track-card p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .confidential-badge {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1rem 2rem;
+            background: var(--color-bg-dark);
+            color: rgba(255,255,255,0.7);
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ===== MARKETS ===== */
+        .markets {
+            padding: 10rem 0;
+            background: var(--color-bg);
+        }
+        .markets-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .markets-card {
+            background: var(--color-surface);
+            padding: 2.2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-border);
+        }
+        .markets-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .region-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            background: var(--color-bg);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.6rem;
+            transition: all var(--transition);
+            border: 1px solid transparent;
+        }
+        .region-item:hover {
+            transform: translateX(4px);
+            border-color: rgba(37,99,235,0.1);
+            background: var(--color-primary-glow);
+        }
+        .region-icon { font-size: 1.3rem; }
+        .region-text h4 { font-size: 0.95rem; font-weight: 600; }
+        .region-text p { font-size: 0.82rem; color: var(--color-text-muted); }
+
+        .model-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.9rem;
+            background: var(--color-bg);
+            border-radius: var(--radius-md);
+            margin-bottom: 0.6rem;
+            transition: all var(--transition);
+            border: 1px solid transparent;
+        }
+        .model-item:hover {
+            border-color: rgba(37,99,235,0.1);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .model-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.15rem; }
+        .model-text h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .model-text p { font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; }
+
+        /* ===== WHY US ===== */
+        .why {
+            padding: 10rem 0;
+            background: var(--color-surface);
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .why-card {
+            background: var(--color-surface-alt);
+            padding: 2.2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border-light);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .why-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), var(--color-primary-light));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .why-card:hover::before { transform: scaleX(1); }
+        .why-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            transition: transform var(--transition-bounce);
+        }
+        .why-card:hover .why-icon { transform: scale(1.15); }
+        .why-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+        .why-card p { color: var(--color-text-secondary); font-size: 0.88rem; line-height: 1.7; }
+
+        /* ===== COLLABORATION ===== */
+        .collab {
+            padding: 10rem 0;
+            background: linear-gradient(135deg, var(--color-bg-dark), var(--color-surface-dark));
+            color: var(--color-text-light);
+        }
+        .collab .section-title { color: var(--color-text-white); }
+        .collab .section-subtitle { color: rgba(255,255,255,0.6); }
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+        .collab-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition);
+        }
+        .collab-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-6px);
+            border-color: rgba(255,255,255,0.15);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+        }
+        .collab-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: block;
+            transition: transform var(--transition-bounce);
+        }
+        .collab-card:hover .collab-icon { transform: scale(1.15); }
+        .collab-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            color: var(--color-text-white);
+        }
+        .collab-card p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+        .collab-commission {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 1.5rem 2.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius-md);
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        /* ===== ROADMAP ===== */
+        .roadmap {
+            padding: 10rem 0;
+            background: var(--color-surface);
+        }
+        .roadmap-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 32px; left: 40px; right: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-accent-gold), var(--color-accent-emerald));
+        }
+        .milestone {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+        .milestone-dot {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: white;
+            transition: all var(--transition-bounce);
+        }
+        .milestone-dot::after {
+            content: '';
+            position: absolute; inset: -8px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            transition: all var(--transition);
+        }
+        .milestone:hover .milestone-dot {
+            transform: scale(1.1);
+        }
+        .milestone:hover .milestone-dot::after {
+            border-color: var(--color-primary);
+            transform: scale(1.3);
+            opacity: 0.3;
+        }
+        .mil:nth-child(1) .milestone-dot { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+        .mil:nth-child(2) .milestone-dot { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
+        .mil:nth-child(3) .milestone-dot { background: linear-gradient(135deg, #F59E0B, #D97706); }
+        .mil:nth-child(4) .milestone-dot { background: linear-gradient(135deg, #10B981, #059669); }
+        .milestone h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+        .milestone p { font-size: 0.8rem; color: var(--color-text-muted); font-weight: 500; }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            padding: 10rem 0;
+            background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-surface-dark) 50%, var(--color-primary-dark) 100%);
+            color: var(--color-text-light);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 80% 20%, rgba(37,99,235,0.15), transparent 60%),
+                        radial-gradient(ellipse at 20% 80%, rgba(6,182,212,0.1), transparent 50%);
+            pointer-events: none;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            position: relative; z-index: 1;
+        }
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.2rem;
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(8px);
+            margin-bottom: 0.8rem;
+            transition: all var(--transition);
+        }
+        .contact-item:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(3px);
+        }
+        .contact-item-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            width: 40px; height: 40px;
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.06);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .contact-item-content h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 0.2rem;
+            font-family: var(--font-sans);
+        }
+        .contact-item-content p,
+        .contact-item-content a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--transition);
+        }
+        .contact-item-content a:hover { color: var(--color-accent); }
+
+        .contact-cta-box {
+            background: rgba(255,255,255,0.06);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+        }
+        .contact-cta-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+            color: var(--color-text-white);
+        }
+        .contact-cta-box p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1.8rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .btn-contact-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+        }
+        .btn-contact-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37,99,235,0.45);
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--color-bg-dark);
+            color: rgba(255,255,255,0.5);
+            padding: 4rem 0 2rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-brand .logo {
+            color: var(--color-text-white);
+            margin-bottom: 0.75rem;
+        }
+        .footer-brand p {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.4);
+        }
+        .footer-col h4 {
+            color: var(--color-text-white);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1rem;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color var(--transition);
+        }
+        .footer-links a:hover { color: var(--color-accent); }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+        .footer-socials {
+            display: flex;
+            gap: 1rem;
+        }
+        .footer-socials a {
+            width: 36px; height: 36px;
+            border-radius: var(--radius-full);
+            background: rgba(255,255,255,0.05);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all var(--transition);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-socials a:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* ===== SCROLL TO TOP ===== */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem; right: 2rem;
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(37,99,235,0.35);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all var(--transition);
+            z-index: 9999;
+        }
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37,99,235,0.5);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid, .markets-grid { grid-template-columns: 1fr; }
+            .hospitals-grid, .why-grid { grid-template-columns: 1fr; }
+            .company-stats { grid-template-columns: repeat(2, 1fr); }
+            .collab-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .process-timeline { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+            .process-timeline::before { display: none; }
+            .track-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1.2rem; }
+            .mobile-menu-btn { display: flex; flex-direction: column; }
+            .desktop-nav, .nav-divider { display: none !important; }
+            .hero { padding: 5rem 1.2rem 3rem; }
+            .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+            .hero-stat-divider { display: none; }
+            .hero-content h1 { font-size: 2rem; }
+            .about, .company, .services, .process, .hospitals, .track, .markets, .why, .collab, .roadmap { padding: 6rem 0; }
+            .about-grid, .services-grid { grid-template-columns: 1fr; }
+            .dept-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .roadmap-timeline { flex-direction: column; gap: 1.5rem; }
+            .roadmap-timeline::before { display: none; }
+            .milestone { display: flex; align-items: center; gap: 1rem; text-align: left; }
+            .milestone-dot { margin: 0; flex-shrink: 0; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-header { margin-bottom: 2.5rem; }
+            .section-title { font-size: 1.8rem; }
+            .problem-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 1.7rem; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+            .company-stats { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .stat-box { padding: 1.2rem 0.5rem; }
+            .stat-box-value { font-size: 1.6rem; }
+            .dept-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+/* Prefers reduced motion */
+         @media (prefers-reduced-motion: reduce) {
+             *, *::before, *::after {
+                 animation-duration: 0.01ms !important;
+                 animation-iteration-count: 1 !important;
+                 transition-duration: 0.01ms !important;
+                 scroll-behavior: auto !important;
+             }
+             .hero-orb, .hero-pulse-ring, .hero-badge-dot { animation: none !important; }
+             .reveal { opacity: 1; transform: none; transition: none; }
+         }
+
+/* Dark mode tokens at :root level above */
+     </style>
+</head>
+<body>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+        <div class="preloader-logo">Kiwi<span>tech</span></div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- ===== CURSOR DOT (Desktop) ===== -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" width="20" height="20">
+                        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M16 9v14M9 16h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Kiwi<span class="logo-accent">tech</span></span>
+            </a>
+
+            <nav class="desktop-nav" id="desktopNav">
+                <a href="#about" class="nav-link active" data-i18n="nav.about">About</a>
+                <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="#hospitals" class="nav-link" data-i18n="nav.hospitals">Hospitals</a>
+                <a href="#why" class="nav-link" data-i18n="nav.why">Why Us</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <div class="nav-divider"></div>
+                <a href="#contact" class="nav-cta">
+                    Get Started
+                    <span class="nav-cta-arrow">→</span>
+                </a>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="mobile-drawer-header">
+            <h4>Menu</h4>
+            <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                         </button>
+        </div>
+        <nav class="mobile-drawer-nav">
+            <a href="#about" class="mobile-nav-link active">About</a>
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#hospitals" class="mobile-nav-link">Hospitals</a>
+            <a href="#why" class="mobile-nav-link">Why Us</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-glow hero-glow-3"></div>
+
+        <div class="hero-orbs">
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+        </div>
+
+        <div class="hero-pulse-ring"></div>
+        <div class="hero-pulse-ring"></div>
+        <div class="hero-pulse-ring"></div>
+
+        <div class="container">
+            <div class="hero-content">
+<div class="hero-badge">
+                     <span class="hero-badge-dot"></span>
+                     International Medical Intermediary
+                 </div>
+                 <h1>
+                     Your Gateway to<br>
+                     <span class="gradient-text">World-Class Healthcare</span><br>
+                     in China
+                 </h1>
+                <p>Connecting patients globally with China's most prestigious hospitals and specialized medical centers — offering advanced treatments at competitive costs.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">50+</div>
+                        <div class="hero-stat-label">Partner Hospitals</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">20<span>+</span></div>
+                        <div class="hero-stat-label">Countries Served</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">98<span>%</span></div>
+                        <div class="hero-stat-label">Patient Satisfaction</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        Get Free Consultation
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">About Us</span>
+                <h2 class="section-title">Trusted Medical Intermediary Since 2014</h2>
+                <p class="section-subtitle">We bridge the gap between international patients and China's advanced healthcare system, providing seamless end-to-end medical services.</p>
+            </div>
+
+            <div class="about-grid">
+<div class="about-card reveal reveal-delay-1">
+                     <div class="about-card-icon">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 9h4"/></svg>
+                     </div>
+                     <h3>Trusted Intermediary</h3>
+                     <p>We connect patients with JCI-accredited hospitals and top-tier specialists, managing every administrative detail with transparency and reliability.</p>
+                 </div>
+                 <div class="about-card reveal reveal-delay-2">
+                     <div class="about-card-icon">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                     </div>
+                     <h3>Global Reach</h3>
+                     <p>From Southeast Asia to the Middle East, Africa, Europe and the Americas — we serve patients across 20+ countries with culturally-sensitive care coordination.</p>
+                 </div>
+                 <div class="about-card reveal reveal-delay-3">
+                     <div class="about-card-icon">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                     </div>
+                     <h3>Quality Assurance</h3>
+                     <p>Rigorous hospital vetting, transparent pricing, and dedicated case managers ensure every patient receives world-class care at affordable rates.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPANY ===== -->
+    <section class="company" id="company">
+        <div class="container">
+            <div class="company-grid">
+                <div class="company-image reveal">
+                    <img src="images/partner.jpg" alt="Suzhou Kiwitech Office" loading="lazy">
+                </div>
+                <div class="company-text reveal reveal-delay-1">
+                    <span class="section-label">Our Company</span>
+                    <h2 class="section-title">
+                        <span class="highlight">10+ Years</span> of Medical Intermediary Excellence
+                    </h2>
+                    <p>
+                        Based in Suzhou's prestigious biomedical innovation hub, Kiwitech was founded by a team of healthcare and cross-border service specialists. We partner directly with China's largest public hospital groups, medical universities, and specialized treatment centers to deliver comprehensive medical intermediary services — from initial consultation through treatment completion and follow-up care.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Our model is designed for medical tourism agencies, insurance providers, corporate health programs, and individual international patients seeking high-quality, cost-effective healthcare in China.
+                    </p>
+                </div>
+            </div>
+
+            <div class="company-stats">
+                <div class="stat-box reveal reveal-delay-1">
+                    <div class="stat-box-value">10+</div>
+                    <div class="stat-box-label">Years Experience</div>
+                </div>
+                <div class="stat-box reveal reveal-delay-2">
+                    <div class="stat-box-value">5,000+</div>
+                    <div class="stat-box-label">Patients Served</div>
+                </div>
+                <div class="stat-box reveal reveal-delay-3">
+                    <div class="stat-box-value">50+</div>
+                    <div class="stat-box-label">Partner Hospitals</div>
+                </div>
+                <div class="stat-box reveal reveal-delay-4">
+                    <div class="stat-box-value">98%</div>
+                    <div class="stat-box-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">The Landscape</span>
+                <h2 class="section-title">Challenges & Opportunities</h2>
+                <p class="section-subtitle">Understanding the complex dynamics of international medical travel to China</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card challenge reveal reveal-delay-1">
+                    <h3>
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-rose)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.5rem"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                         Challenges Patients Face
+                     </h3>
+                    <ul>
+                        <li>Information asymmetry & language barriers when researching Chinese hospitals</li>
+                        <li>Navigating complex medical visa requirements and appointment scheduling</li>
+                        <li>Lack of transparent pricing across different hospitals and treatment plans</li>
+                        <li>Cultural differences and unfamiliarity with China's healthcare system</li>
+                        <li>Difficulty verifying hospital accreditations and specialist credentials remotely</li>
+                    </ul>
+                </div>
+                <div class="problem-card opportunity reveal reveal-delay-2">
+                    <h3>✓ The Opportunity</h3>
+                    <ul>
+                        <li>China has 30+ JCI-accredited hospitals offering world-class treatment</li>
+                        <li>Advanced medical technologies at 40-60% lower cost than Western countries</li>
+                        <li>Specialized centers of excellence in oncology, cardiology, orthopedics and more</li>
+                        <li>Growing government support for medical tourism infrastructure</li>
+                        <li>Established medical hubs in Shanghai, Beijing, Guangzhou and Suzhou</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="problem-bridge reveal reveal-delay-3">
+                Kiwitech bridges this gap — making China's healthcare accessible, transparent, and reliable for international patients.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Comprehensive Medical Services</h2>
+                <p class="section-subtitle">End-to-end support from initial inquiry through treatment completion and follow-up care</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-number">01</div>
+                    <h3>Hospital Selection & Verification</h3>
+                    <p>Curated matching with JCI-accredited hospitals and specialized medical centers based on your specific condition, budget, and preferences.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-number">02</div>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Seamless booking of consultations, diagnostic tests, and treatment appointments with China's leading specialists, managing all logistics.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-number">03</div>
+                    <h3>Medical Visa Assistance</h3>
+                    <p>Complete visa application support including invitation letters, appointment documents, and hospital admission verification for smooth entry.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-number">04</div>
+                    <h3>Translation & Interpretation</h3>
+                    <p>Professional medical interpreters fluent in your language, accompanying you throughout consultations, procedures, and follow-up appointments.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-1" style="transition-delay: 0.5s;">
+                    <div class="service-number">05</div>
+                    <h3>Travel & Accommodation</h3>
+                    <p>Complete travel logistics including airport transfers, hospital-nearby accommodation, and local transportation throughout your treatment journey.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-2" style="transition-delay: 0.6s;">
+                    <div class="service-number">06</div>
+                    <h3>Follow-up & Recovery</h3>
+                    <p>Post-treatment care coordination, remote follow-up consultations, and medical report translation to ensure continuity of care upon return.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">How It Works</span>
+                <h2 class="section-title">Your Journey With Kiwitech</h2>
+                <p class="section-subtitle">A seamless, guided process from inquiry to recovery</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="process-step-circle">1</div>
+                    <h3>Inquiry</h3>
+                    <p>Submit your medical needs</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="process-step-circle">2</div>
+                    <h3>Consultation</h3>
+                    <p>Case review by specialists</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="process-step-circle">3</div>
+                    <h3>Planning</h3>
+                    <p>Customized treatment plan</p>
+                </div>
+                <div class="process-step reveal reveal-delay-4">
+                    <div class="process-step-circle">4</div>
+                    <h3>Travel</h3>
+                    <p>Visa & logistics arranged</p>
+                </div>
+                <div class="process-step reveal reveal-delay-1" style="transition-delay: 0.5s;">
+                    <div class="process-step-circle">5</div>
+                    <h3>Treatment</h3>
+                    <p>World-class medical care</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2" style="transition-delay: 0.6s;">
+                    <div class="process-step-circle">6</div>
+                    <h3>Aftercare</h3>
+                    <p>Follow-up & recovery support</p>
+                </div>
+            </div>
+
+            <div class="process-summary reveal reveal-delay-3">
+                From your first inquiry to your last follow-up appointment, a dedicated case manager coordinates every detail — so you can focus on what matters most: your health.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOSPITALS ===== -->
+    <section class="hospitals" id="hospitals">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Network</span>
+                <h2 class="section-title">Partner Hospitals & Treatment Centers</h2>
+                <p class="section-subtitle">Access to China's most prestigious medical institutions across key cities</p>
+            </div>
+
+            <div class="hospitals-grid">
+<div class="hospitals-card reveal reveal-delay-1">
+                     <h3>
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.5rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                         Major Medical Hubs
+                     </h3>
+                     <div class="city-item">
+                         <span class="city-item-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+                         </span>
+                         <div class="city-text">
+                             <h4>Shanghai</h4>
+                             <p>20+ JCI hospitals — Oncology, Cardiology, Neurology</p>
+                         </div>
+                     </div>
+                     <div class="city-item">
+                         <span class="city-item-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+                         </span>
+                         <div class="city-text">
+                             <h4>Beijing</h4>
+                             <p>15+ leading hospitals — Oncology, Orthopedics, Transplants</p>
+                         </div>
+                     </div>
+                     <div class="city-item">
+                         <span class="city-item-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+                         </span>
+                         <div class="city-text">
+                             <h4>Guangzhou</h4>
+                             <p>10+ specialist centers — Cardiology, Pulmonology, Pediatrics</p>
+                         </div>
+                     </div>
+                     <div class="city-item">
+                         <span class="city-item-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg>
+                         </span>
+                         <div class="city-text">
+                             <h4>Suzhou</h4>
+                             <p>6+ hospitals — Oncology, Rehabilitation, Traditional Medicine</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="hospitals-card reveal reveal-delay-2">
+                     <h3>
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.5rem"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                         Medical Specialties
+                     </h3>
+                    <div class="dept-grid">
+                        <div class="dept-item">Oncology</div>
+                        <div class="dept-item">Cardiology</div>
+                        <div class="dept-item">Orthopedics</div>
+                        <div class="dept-item">Neurology</div>
+                        <div class="dept-item">Ophthalmology</div>
+                        <div class="dept-item">Transplant</div>
+                        <div class="dept-item">Pediatrics</div>
+                        <div class="dept-item">Fertility</div>
+                    </div>
+                </div>
+            </div>
+
+<div class="cost-banner reveal reveal-delay-3">
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.4rem"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                 Cost savings: 40–60% vs. US & European treatment — without compromising quality
+             </div>
+        </div>
+    </section>
+
+    <!-- ===== TRACK RECORD ===== -->
+    <section class="track" id="track">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Track Record</span>
+                <h2 class="section-title">Proven Results Across Borders</h2>
+                <p class="section-subtitle">Our success spans continents and medical disciplines</p>
+            </div>
+
+            <div class="track-grid">
+<div class="track-card reveal reveal-delay-1">
+                     <div class="track-flag">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                     </div>
+                     <h3>Myanmar Patient — Cardiac Surgery</h3>
+                    <p>Complete heart bypass surgery at Shanghai Chest Hospital with full pre & post-operative care coordination. Patient recovered fully within 8 weeks.</p>
+                </div>
+<div class="track-card reveal reveal-delay-2">
+                     <div class="track-flag">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                     </div>
+                     <h3>Russian Patient — Oncology Treatment</h3>
+                    <p>Advanced immunotherapy protocol at Beijing Cancer Hospital. Multi-cycle treatment with telemedicine follow-up post-return. Currently in stable remission.</p>
+                </div>
+<div class="track-card reveal reveal-delay-3">
+                     <div class="track-flag">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                     </div>
+                     <h3>Cambodian Patient — Orthopedic Surgery</h3>
+                    <p>Complex spinal fusion surgery at Shanghai Sixth People's Hospital. Full rehabilitation support, 95% mobility restored within 6 months.</p>
+                </div>
+            </div>
+
+<div style="text-align: center; margin-top: 2.5rem;">
+                 <span class="confidential-badge reveal reveal-delay-4">
+                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.4rem"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                     All cases managed with strict confidentiality
+                 </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MARKETS ===== -->
+    <section class="markets" id="markets">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Global Reach</span>
+                <h2 class="section-title">Service Regions & Partnership Models</h2>
+                <p class="section-subtitle">Serving partners and patients across six continents</p>
+            </div>
+
+            <div class="markets-grid">
+                <div class="markets-card reveal reveal-delay-1">
+                    <h3>
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.5rem"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                         Regions We Serve
+                     </h3>
+                    <div class="region-item">
+                        <span class="region-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                         </span>
+                        <div class="region-text">
+                            <h4>Southeast Asia</h4>
+                            <p>Myanmar, Cambodia, Vietnam, Thailand, Philippines, Indonesia, Malaysia</p>
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <span class="region-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                         </span>
+                        <div class="region-text">
+                            <h4>Middle East & Africa</h4>
+                            <p>UAE, Saudi Arabia, Egypt, Ethiopia, Kenya, Nigeria, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <span class="region-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                         </span>
+                        <div class="region-text">
+                            <h4>Europe & Americas</h4>
+                            <p>UK, Germany, France, Italy, Russia, USA, Canada, Brazil, Mexico</p>
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <span class="region-icon">
+                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                         </span>
+                        <div class="region-text">
+                            <h4>Central Asia</h4>
+                            <p>Kazakhstan, Uzbekistan, Mongolia, Azerbaijan, Georgia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="markets-card reveal reveal-delay-2">
+                    <h3>
+                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.5rem"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                         Partnership Models
+                     </h3>
+                    <div class="model-item">
+                        <span class="model-icon">
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                         </span>
+                        <div class="model-text">
+                            <h4>B2B — Medical Tourism Agencies</h4>
+                            <p>White-label intermediary services with competitive commission structures</p>
+                        </div>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-icon">
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                         </span>
+                        <div class="model-text">
+                            <h4>B2B — Insurance & Corporate</h4>
+                            <p>Preferred provider arrangements for medical insurance and corporate health programs</p>
+                        </div>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-icon">
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                         </span>
+                        <div class="model-text">
+                            <h4>B2C — Direct Patients</h4>
+                            <p>Full-service intermediary support for individual international patients</p>
+                        </div>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-icon">
+                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                         </span>
+                        <div class="model-text">
+                            <h4>Medical Second Opinions</h4>
+                            <p>Remote specialist consultations with China's leading physicians</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROADMAP ===== -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Growth Plan</span>
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-subtitle">Building bridges in global healthcare, year by year</p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <div class="milestone mil reveal reveal-delay-1">
+                    <div class="milestone-dot">2014</div>
+                    <h3>Founded in Suzhou</h3>
+                    <p>Beginning of the journey</p>
+                </div>
+                <div class="milestone mil reveal reveal-delay-2">
+                    <div class="milestone-dot">2017</div>
+                    <h3>1,000 Patients</h3>
+                    <p>Milestone reached</p>
+                </div>
+                <div class="milestone mil reveal reveal-delay-3">
+                    <div class="milestone-dot">2021</div>
+                    <h3>50+ Hospital Partners</h3>
+                    <p>Network expansion</p>
+                </div>
+                <div class="milestone mil reveal reveal-delay-4">
+                    <div class="milestone-dot">2024+</div>
+                    <h3>Global Expansion</h3>
+                    <p>Worldwide reach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="why" id="why">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">Why Partner with Kiwitech?</h2>
+                <p class="section-subtitle">The difference is in the details</p>
+            </div>
+
+            <div class="why-grid">
+<div class="why-card reveal reveal-delay-1">
+                     <div class="why-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                     </div>
+                     <h3>Expert Matching</h3>
+                     <p>We match patients with the exact specialist and hospital for their condition — no guesswork, no wasted time.</p>
+                 </div>
+                 <div class="why-card reveal reveal-delay-2">
+                     <div class="why-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                     </div>
+                     <h3>Full Transparency</h3>
+                     <p>Clear pricing, regular progress updates, and complete medical record transparency throughout your journey.</p>
+                 </div>
+                 <div class="why-card reveal reveal-delay-3">
+                     <div class="why-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                     </div>
+                     <h3>Cultural Bridge</h3>
+                     <p>We don't just translate language — we bridge cultural nuances, dietary needs, and local customs.</p>
+                 </div>
+                 <div class="why-card reveal reveal-delay-1" style="transition-delay: 0.4s;">
+                     <div class="why-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                     </div>
+                     <h3>Rapid Response</h3>
+                     <p>Initial consultation within 48 hours. Treatment plans delivered within one week of case review.</p>
+                 </div>
+                 <div class="why-card reveal reveal-delay-2" style="transition-delay: 0.5s;">
+                     <div class="why-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                     </div>
+                     <h3>Dedicated Support</h3>
+                     <p>A personal case manager assigned from day one — your single point of contact throughout the entire process.</p>
+                 </div>
+                 <div class="why-card reveal reveal-delay-3" style="transition-delay: 0.6s;">
+                     <div class="why-icon">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                     </div>
+                     <h3>Cost Advantage</h3>
+                     <p>40–60% cost savings vs. Western healthcare, without compromising on quality or safety standards.</p>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COLLABORATION ===== -->
+    <section class="collab" id="collab">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Collaboration</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">Flexible collaboration models for partners worldwide</p>
+            </div>
+
+            <div class="collab-grid">
+<div class="collab-card reveal reveal-delay-1">
+                     <span class="collab-icon">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                     </span>
+                     <h3>Agent Partnership</h3>
+                    <p>Refer patients and earn competitive commissions. We handle all logistics — you grow your business.</p>
+                </div>
+<div class="collab-card reveal reveal-delay-2">
+                     <span class="collab-icon">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                     </span>
+                     <h3>Institutional Partnership</h3>
+                    <p>For hospitals, insurance providers, and corporate health programs — build a preferred referral channel.</p>
+                </div>
+<div class="collab-card reveal reveal-delay-3">
+                     <span class="collab-icon">
+                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                     </span>
+                     <h3>Strategic Alliance</h3>
+                    <p>Long-term partnership with revenue sharing, co-marketing, and exclusive access to partner hospitals.</p>
+                </div>
+            </div>
+
+<div style="text-align: center; margin-top: 2.5rem;">
+                 <span class="collab-commission reveal reveal-delay-4">
+                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.4rem"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                     All partnerships include a transparent commission structure — no hidden fees, no surprises.
+                 </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2>Let's Start</h2>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                     </div>
+                        <div class="contact-item-content">
+                            <h4>Will Tang</h4>
+                            <p>SUZHOU KIWITECH CO., LTD.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                     </div>
+                        <div class="contact-item-content">
+                            <h4>WhatsApp / Mobile / WeChat</h4>
+                            <a href="https://wa.me/8618502187161">+86-18502187161</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                     </div>
+                        <div class="contact-item-content">
+                            <h4>Website</h4>
+                            <a href="https://www.kiwitk.com">www.kiwitk.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                     </div>
+                        <div class="contact-item-content">
+                            <h4>Email</h4>
+                            <a href="mailto:will.tang@kiwitk.com">will.tang@kiwitk.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                     </div>
+                        <div class="contact-item-content">
+                            <h4>Address</h4>
+                            <p>Suzhou Industrial Park, Suzhou, Jiangsu, China</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta-box reveal reveal-delay-1">
+                    <h3>Start Your Journey</h3>
+                    <p>Fill out our medical intake form and a case manager will contact you within 24 hours with a personalized consultation plan.</p>
+                    <a href="#" class="btn-contact-submit">
+                        Request Consultation
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 32 32" fill="none" width="20" height="20">
+                                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M16 9v14M9 16h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Kiwi<span class="logo-accent">tech</span></span>
+                    </a>
+                    <p>Your trusted partner for world-class healthcare in China. Bridging borders, transforming lives.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#hospitals">Hospitals</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Hospital Selection</a></li>
+                        <li><a href="#">Visa Assistance</a></li>
+                        <li><a href="#">Translation</a></li>
+                        <li><a href="#">Telemedicine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Suzhou Kiwitech Medical Services Co., Ltd. All rights reserved.</p>
+<div class="footer-socials">
+                     <a href="#" aria-label="WeChat">
+                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                     </a>
+                     <a href="#" aria-label="Email">
+                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                     </a>
+                     <a href="#" aria-label="Phone">
+                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                     </a>
+                 </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+    // ===== Preloader =====
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('preloader');
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+            setTimeout(() => { loader.style.display = 'none'; }, 600);
+        }, 500);
+    });
+
+    // ===== Custom Cursor (Desktop only)
+    const cursorDot = document.getElementById('cursorDot');
+    let mouseX = 0, mouseY = 0;
+    let dotX = 0, dotY = 0;
+
+    if (cursorDot && window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.left = (mouseX - 4) + 'px';
+            cursorDot.style.top = (mouseY - 4) + 'px';
+        });
+
+        document.querySelectorAll('a, button, input, select, textarea, [role="button"]').forEach(el => {
+            el.addEventListener('mouseenter', () => cursorDot.style.transform = 'scale(2)');
+            el.addEventListener('mouseleave', () => cursorDot.style.transform = 'scale(1)');
+        });
+    }
+
+    // ===== Scroll to Top =====
+    const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+         if (window.scrollY > window.innerHeight * 0.5) {
+             scrollTopBtn.classList.add('visible');
+         } else {
+             scrollTopBtn.classList.remove('visible');
+         }
+     }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== Header Scroll Effect =====
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            siteHeader.classList.add('scrolled');
+        } else {
+            siteHeader.classList.remove('scrolled');
+        }
+    });
+
+    // ===== Mobile Drawer =====
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+
+    function openDrawer() {
+        mobileDrawer.classList.add('active');
+        mobileOverlay.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+        mobileDrawer.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openDrawer);
+    mobileDrawerClose.addEventListener('click', closeDrawer);
+    mobileOverlay.addEventListener('click', closeDrawer);
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            closeDrawer();
+            document.querySelectorAll('.mobile-nav-link').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+
+    // ===== Scroll Reveal (Intersection Observer) =====
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===== Active Nav Link =====
+     const sections = document.querySelectorAll('section[id]');
+     const navLinks = document.querySelectorAll('.nav-link');
+     let ticking = false;
+     window.addEventListener('scroll', () => {
+         if (!ticking) {
+             requestAnimationFrame(() => {
+                 let current = '';
+                 const scrollY = window.scrollY + 120;
+                 sections.forEach(section => {
+                     const top = section.offsetTop;
+                     const height = section.offsetHeight;
+                     if (scrollY >= top && scrollY < top + height) {
+                         current = section.id;
+                     }
+                 });
+                 navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + current));
+                 ticking = false;
+             });
+             ticking = true;
+         }
+     }, { passive: true });
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+    });
+
+    // ===== Smooth Scroll for anchor links =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

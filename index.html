@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Suzhou Kiwitech - International Medical Intermediary Services Connecting Patients Globally with China's top-tier healthcare">
+    <meta name="theme-color" content="#0A1628">
+    <meta name="color-scheme" content="light dark">
+    <title>Kiwitech Medical Services | World-Class Healthcare in China</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="images/hero-bg.jpg" as="image">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+        <div class="preloader-logo">Kiwi<span>tech</span></div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- ===== CURSOR DOT ===== -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop" data-i18n-aria-label="a11y.scrollTop" aria-label="Scroll to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- ===== HEADER ===== -->
+    <header class="site-header" id="siteHeader" role="banner">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" width="20" height="20">
+                        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.8"/>
+                        <path d="M16 9v14M9 16h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Kiwi<span class="logo-accent">tech</span></span>
+            </a>
+
+<nav class="desktop-nav" id="desktopNav" aria-label="Primary navigation">
+                 <a href="#about" class="nav-link active" aria-current="page" data-i18n="nav.about">About</a>
+                 <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                 <a href="#hospitals" class="nav-link" data-i18n="nav.hospitals">Hospitals</a>
+                 <a href="#why" class="nav-link" data-i18n="nav.why">Why Us</a>
+                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <div class="lang-selector-wrap">
+                    <select id="lang-selector" data-i18n-aria-label="a11y.language" aria-label="Language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                        <option value="ru">Русский</option>
+                        <option value="pt">Português</option>
+                        <option value="ar">العربية</option>
+                        <option value="ja">日本語</option>
+                        <option value="ko">한국어</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="th">ไทย</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="tr">Türkçe</option>
+                        <option value="sw">Kiswahili</option>
+                        <option value="ms">Bahasa Melayu</option>
+                        <option value="my">မြန်မာ</option>
+                    </select>
+                </div>
+                <div class="nav-divider"></div>
+                <a href="#contact" class="nav-cta">
+                    <span data-i18n="nav.cta">Get Started</span>
+                    <span class="nav-cta-arrow">→</span>
+                </a>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" data-i18n-aria-label="a11y.toggleMenu" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" data-i18n-aria-label="a11y.navigationMenu" aria-label="Navigation menu" aria-modal="true">
+        <div class="mobile-drawer-header">
+            <h4 data-i18n="a11y.menu">Menu</h4>
+            <button class="mobile-drawer-close" id="mobileDrawerClose" data-i18n-aria-label="a11y.closeMenu" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <nav class="mobile-drawer-nav">
+            <a href="#about" class="mobile-nav-link active" data-i18n="nav.about">About</a>
+            <a href="#services" class="mobile-nav-link" data-i18n="nav.services">Services</a>
+            <a href="#hospitals" class="mobile-nav-link" data-i18n="nav.hospitals">Hospitals</a>
+            <a href="#why" class="mobile-nav-link" data-i18n="nav.why">Why Us</a>
+            <a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contact</a>
+            <select class="mobile-lang-selector" data-i18n-aria-label="a11y.language" aria-label="Language">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="ru">Русский</option>
+                <option value="pt">Português</option>
+                <option value="ar">العربية</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="hi">हिन्दी</option>
+                <option value="th">ไทย</option>
+                <option value="vi">Tiếng Việt</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="tr">Türkçe</option>
+                <option value="sw">Kiswahili</option>
+                <option value="ms">Bahasa Melayu</option>
+                <option value="my">မြန်မာ</option>
+            </select>
+        </nav>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <main id="main-content">
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-glow hero-glow-3"></div>
+        <div class="hero-orbs">
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+            <div class="hero-orb"></div>
+        </div>
+        <div class="hero-pulse-ring"></div>
+        <div class="hero-pulse-ring"></div>
+        <div class="hero-pulse-ring"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-i18n="hero.badge">
+                    <span class="hero-badge-dot"></span>
+                    International Medical Intermediary
+                </div>
+                <h1>
+                    <span data-i18n="hero.title1">Your Gateway to</span><br>
+                    <span class="gradient-text" data-i18n="hero.title2">World-Class Healthcare</span><br>
+                    <span data-i18n="hero.title3">in China</span>
+                </h1>
+                <p data-i18n="hero.subtitle">Connecting patients globally with China's most prestigious hospitals and specialized medical centers — offering advanced treatments at competitive costs.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">50+</div>
+                        <div class="hero-stat-label" data-i18n="hero.stat1.label">Partner Hospitals</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">20<span>+</span></div>
+                        <div class="hero-stat-label" data-i18n="hero.stat2.label">Countries Served</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">98<span>%</span></div>
+                        <div class="hero-stat-label" data-i18n="hero.stat3.label">Patient Satisfaction</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-i18n="hero.cta1">Get Free Consultation</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span data-i18n="hero.scroll">Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="about.label">About Us</span>
+                <h2 class="section-title" data-i18n="about.title">Trusted Medical Intermediary Since 2014</h2>
+                <p class="section-subtitle" data-i18n="about.subtitle">We bridge the gap between international patients and China's advanced healthcare system, providing seamless end-to-end medical services.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal reveal-delay-1">
+                    <div class="about-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 9h4"/><path d="M10 13h4"/></svg></div>
+                    <h3 data-i18n="about.card1.title">Trusted Intermediary</h3>
+                    <p data-i18n="about.card1.desc">We connect patients with JCI-accredited hospitals and top-tier specialists, managing every administrative detail with transparency and reliability.</p>
+                </div>
+                <div class="about-card reveal reveal-delay-2">
+                    <div class="about-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                    <h3 data-i18n="about.card2.title">Global Reach</h3>
+                    <p data-i18n="about.card2.desc">From Southeast Asia to the Middle East, Africa, Europe and the Americas — we serve patients across 20+ countries with culturally-sensitive care coordination.</p>
+                </div>
+                <div class="about-card reveal reveal-delay-3">
+                    <div class="about-card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+                    <h3 data-i18n="about.card3.title">Quality Assurance</h3>
+                    <p data-i18n="about.card3.desc">Rigorous hospital vetting, transparent pricing, and dedicated case managers ensure every patient receives world-class care at affordable rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPANY ===== -->
+    <section class="company" id="company">
+        <div class="container">
+            <div class="company-grid">
+                <div class="company-image reveal">
+                    <img src="images/partner.jpg" data-i18n-alt="company.imageAlt" alt="Suzhou Kiwitech Office" loading="lazy" decoding="async" width="600" height="750">
+                </div>
+                <div class="company-text reveal reveal-delay-1">
+                    <span class="section-label" data-i18n="company.label">Our Company</span>
+                    <h2 class="section-title" data-i18n-html="company.title"><span class="highlight">10+ Years</span> of Medical Intermediary Excellence</h2>
+                    <p data-i18n="company.desc1">Based in Suzhou's prestigious biomedical innovation hub, Kiwitech was founded by a team of healthcare and cross-border service specialists. We partner directly with China's largest public hospital groups, medical universities, and specialized treatment centers to deliver comprehensive medical intermediary services.</p>
+                    <p style="margin-top:1rem;" data-i18n="company.desc2">Our model is designed for medical tourism agencies, insurance providers, corporate health programs, and individual international patients seeking high-quality, cost-effective healthcare in China.</p>
+                </div>
+            </div>
+            <div class="company-stats">
+                <div class="stat-box reveal reveal-delay-1">
+                    <div class="stat-box-value">10+</div>
+                    <div class="stat-box-label" data-i18n="company.stat1.label">Years Experience</div>
+                </div>
+                <div class="stat-box reveal reveal-delay-2">
+                    <div class="stat-box-value">5,000+</div>
+                    <div class="stat-box-label" data-i18n="company.stat2.label">Patients Served</div>
+                </div>
+                <div class="stat-box reveal reveal-delay-3">
+                    <div class="stat-box-value">50+</div>
+                    <div class="stat-box-label" data-i18n="company.stat3.label">Partner Hospitals</div>
+                </div>
+                <div class="stat-box reveal reveal-delay-4">
+                    <div class="stat-box-value">98%</div>
+                    <div class="stat-box-label" data-i18n="company.stat4.label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="problem.label">The Landscape</span>
+                <h2 class="section-title" data-i18n="problem.title">Challenges & Opportunities</h2>
+                <p class="section-subtitle" data-i18n="problem.subtitle">Understanding the complex dynamics of international medical travel to China</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card challenge reveal reveal-delay-1">
+                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> <span data-i18n="problem.challenge.title">Challenges Patients Face</span></h3>
+                    <ul>
+                        <li data-i18n="problem.challenge1">Information asymmetry & language barriers when researching Chinese hospitals</li>
+                        <li data-i18n="problem.challenge2">Navigating complex medical visa requirements and appointment scheduling</li>
+                        <li data-i18n="problem.challenge3">Lack of transparent pricing across different hospitals and treatment plans</li>
+                        <li data-i18n="problem.challenge4">Cultural differences and unfamiliarity with China's healthcare system</li>
+                        <li data-i18n="problem.challenge5">Difficulty verifying hospital accreditations and specialist credentials remotely</li>
+                    </ul>
+                </div>
+                <div class="problem-card opportunity reveal reveal-delay-2">
+                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> <span data-i18n="problem.opportunity.title">The Opportunity</span></h3>
+                    <ul>
+                        <li data-i18n="problem.opportunity1">China has 30+ JCI-accredited hospitals offering world-class treatment</li>
+                        <li data-i18n="problem.opportunity2">Advanced medical technologies at 40-60% lower cost than Western countries</li>
+                        <li data-i18n="problem.opportunity3">Specialized centers of excellence in oncology, cardiology, orthopedics and more</li>
+                        <li data-i18n="problem.opportunity4">Growing government support for medical tourism infrastructure</li>
+                        <li data-i18n="problem.opportunity5">Established medical hubs in Shanghai, Beijing, Guangzhou and Suzhou</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="problem-bridge reveal reveal-delay-3" data-i18n="problem.bridge">
+                Kiwitech bridges this gap — making China's healthcare accessible, transparent, and reliable for international patients.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="services.label">What We Do</span>
+                <h2 class="section-title" data-i18n="services.title">Comprehensive Medical Services</h2>
+                <p class="section-subtitle" data-i18n="services.subtitle">End-to-end support from initial inquiry through treatment completion and follow-up care</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-number">01</div>
+                    <h3 data-i18n="services.card1.title">Hospital Selection & Verification</h3>
+                    <p data-i18n="services.card1.desc">Curated matching with JCI-accredited hospitals and specialized medical centers based on your specific condition, budget, and preferences.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-number">02</div>
+                    <h3 data-i18n="services.card2.title">Appointment Scheduling</h3>
+                    <p data-i18n="services.card2.desc">Seamless booking of consultations, diagnostic tests, and treatment appointments with China's leading specialists, managing all logistics.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-number">03</div>
+                    <h3 data-i18n="services.card3.title">Medical Visa Assistance</h3>
+                    <p data-i18n="services.card3.desc">Complete visa application support including invitation letters, appointment documents, and hospital admission verification for smooth entry.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-4">
+                    <div class="service-number">04</div>
+                    <h3 data-i18n="services.card4.title">Translation & Interpretation</h3>
+                    <p data-i18n="services.card4.desc">Professional medical interpreters fluent in your language, accompanying you throughout consultations, procedures, and follow-up appointments.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-1" style="transition-delay:0.5s;">
+                    <div class="service-number">05</div>
+                    <h3 data-i18n="services.card5.title">Travel & Accommodation</h3>
+                    <p data-i18n="services.card5.desc">Complete travel logistics including airport transfers, hospital-nearby accommodation, and local transportation throughout your treatment journey.</p>
+                </div>
+                <div class="service-card reveal reveal-delay-2" style="transition-delay:0.6s;">
+                    <div class="service-number">06</div>
+                    <h3 data-i18n="services.card6.title">Follow-up & Recovery</h3>
+                    <p data-i18n="services.card6.desc">Post-treatment care coordination, remote follow-up consultations, and medical report translation to ensure continuity of care upon return.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="process.label">How It Works</span>
+                <h2 class="section-title" data-i18n="process.title">Your Journey With Kiwitech</h2>
+                <p class="section-subtitle" data-i18n="process.subtitle">A seamless, guided process from inquiry to recovery</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step reveal reveal-delay-1">
+                    <div class="process-step-circle">1</div>
+                    <h3 data-i18n="process.step1.title">Inquiry</h3>
+                    <p data-i18n="process.step1.desc">Submit your medical needs</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2">
+                    <div class="process-step-circle">2</div>
+                    <h3 data-i18n="process.step2.title">Consultation</h3>
+                    <p data-i18n="process.step2.desc">Case review by specialists</p>
+                </div>
+                <div class="process-step reveal reveal-delay-3">
+                    <div class="process-step-circle">3</div>
+                    <h3 data-i18n="process.step3.title">Planning</h3>
+                    <p data-i18n="process.step3.desc">Customized treatment plan</p>
+                </div>
+                <div class="process-step reveal reveal-delay-4">
+                    <div class="process-step-circle">4</div>
+                    <h3 data-i18n="process.step4.title">Travel</h3>
+                    <p data-i18n="process.step4.desc">Visa & logistics arranged</p>
+                </div>
+                <div class="process-step reveal reveal-delay-1" style="transition-delay:0.5s;">
+                    <div class="process-step-circle">5</div>
+                    <h3 data-i18n="process.step5.title">Treatment</h3>
+                    <p data-i18n="process.step5.desc">World-class medical care</p>
+                </div>
+                <div class="process-step reveal reveal-delay-2" style="transition-delay:0.6s;">
+                    <div class="process-step-circle">6</div>
+                    <h3 data-i18n="process.step6.title">Aftercare</h3>
+                    <p data-i18n="process.step6.desc">Follow-up & recovery support</p>
+                </div>
+            </div>
+            <div class="process-summary reveal reveal-delay-3" data-i18n="process.summary">
+                From your first inquiry to your last follow-up appointment, a dedicated case manager coordinates every detail — so you can focus on what matters most: your health.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOSPITALS ===== -->
+    <section class="hospitals" id="hospitals">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="hospitals.label">Our Network</span>
+                <h2 class="section-title" data-i18n="hospitals.title">Partner Hospitals & Treatment Centers</h2>
+                <p class="section-subtitle" data-i18n="hospitals.subtitle">Access to China's most prestigious medical institutions across key cities</p>
+            </div>
+            <div class="hospitals-grid">
+                <div class="hospitals-card reveal reveal-delay-1">
+                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> <span data-i18n="hospitals.cities.title">Major Medical Hubs</span></h3>
+                    <div class="city-item">
+                        <span class="city-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span>
+                        <div class="city-text">
+                            <h4 data-i18n="hospitals.city1">Shanghai</h4>
+                            <p data-i18n="hospitals.city1.desc">20+ JCI hospitals — Oncology, Cardiology, Neurology</p>
+                        </div>
+                    </div>
+                    <div class="city-item">
+                        <span class="city-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span>
+                        <div class="city-text">
+                            <h4 data-i18n="hospitals.city2">Beijing</h4>
+                            <p data-i18n="hospitals.city2.desc">15+ leading hospitals — Oncology, Orthopedics, Transplants</p>
+                        </div>
+                    </div>
+                    <div class="city-item">
+                        <span class="city-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span>
+                        <div class="city-text">
+                            <h4 data-i18n="hospitals.city3">Guangzhou</h4>
+                            <p data-i18n="hospitals.city3.desc">10+ specialist centers — Cardiology, Pulmonology, Pediatrics</p>
+                        </div>
+                    </div>
+                    <div class="city-item">
+                        <span class="city-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></span>
+                        <div class="city-text">
+                            <h4 data-i18n="hospitals.city4">Suzhou</h4>
+                            <p data-i18n="hospitals.city4.desc">6+ hospitals — Oncology, Rehabilitation, Traditional Medicine</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hospitals-card reveal reveal-delay-2">
+                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> <span data-i18n="hospitals.dept.title">Medical Specialties</span></h3>
+                    <div class="dept-grid">
+                        <div class="dept-item" data-i18n="hospitals.dept1">Oncology</div>
+                        <div class="dept-item" data-i18n="hospitals.dept2">Cardiology</div>
+                        <div class="dept-item" data-i18n="hospitals.dept3">Orthopedics</div>
+                        <div class="dept-item" data-i18n="hospitals.dept4">Neurology</div>
+                        <div class="dept-item" data-i18n="hospitals.dept5">Ophthalmology</div>
+                        <div class="dept-item" data-i18n="hospitals.dept6">Transplant</div>
+                        <div class="dept-item" data-i18n="hospitals.dept7">Pediatrics</div>
+                        <div class="dept-item" data-i18n="hospitals.dept8">Fertility</div>
+                    </div>
+                </div>
+            </div>
+            <div class="cost-banner reveal reveal-delay-3" data-i18n="hospitals.cost">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:middle;margin-right:0.4rem"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Cost savings: 40–60% vs. US & European treatment — without compromising quality
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRACK RECORD ===== -->
+    <section class="track" id="track">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="track.label">Track Record</span>
+                <h2 class="section-title" data-i18n="track.title">Proven Results Across Borders</h2>
+                <p class="section-subtitle" data-i18n="track.subtitle">Our success spans continents and medical disciplines</p>
+            </div>
+            <div class="track-grid">
+                <div class="track-card reveal reveal-delay-1">
+                    <div class="track-flag"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+                    <h3 data-i18n="track.card1.title">Myanmar Patient — Cardiac Surgery</h3>
+                    <p data-i18n="track.card1.desc">Complete heart bypass surgery at Shanghai Chest Hospital with full pre & post-operative care coordination. Patient recovered fully within 8 weeks.</p>
+                </div>
+                <div class="track-card reveal reveal-delay-2">
+                    <div class="track-flag"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+                    <h3 data-i18n="track.card2.title">Russian Patient — Oncology Treatment</h3>
+                    <p data-i18n="track.card2.desc">Advanced immunotherapy protocol at Beijing Cancer Hospital. Multi-cycle treatment with telemedicine follow-up post-return. Currently in stable remission.</p>
+                </div>
+                <div class="track-card reveal reveal-delay-3">
+                    <div class="track-flag"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+                    <h3 data-i18n="track.card3.title">Cambodian Patient — Orthopedic Surgery</h3>
+                    <p data-i18n="track.card3.desc">Complex spinal fusion surgery at Shanghai Sixth People's Hospital. Full rehabilitation support, 95% mobility restored within 6 months.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2.5rem;">
+                <span class="confidential-badge reveal reveal-delay-4">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <span data-i18n="track.confidential">All cases managed with strict confidentiality</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MARKETS ===== -->
+    <section class="markets" id="markets">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="markets.label">Global Reach</span>
+                <h2 class="section-title" data-i18n="markets.title">Service Regions & Partnership Models</h2>
+                <p class="section-subtitle" data-i18n="markets.subtitle">Serving partners and patients across six continents</p>
+            </div>
+            <div class="markets-grid">
+                <div class="markets-card reveal reveal-delay-1">
+                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> <span data-i18n="markets.regions.title">Regions We Serve</span></h3>
+                    <div class="region-item">
+                        <span class="region-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                        <div class="region-text">
+                            <h4 data-i18n="markets.region1">Southeast Asia</h4>
+                            <p data-i18n="markets.region1.desc">Myanmar, Cambodia, Vietnam, Thailand, Philippines, Indonesia, Malaysia</p>
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <span class="region-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                        <div class="region-text">
+                            <h4 data-i18n="markets.region2">Middle East & Africa</h4>
+                            <p data-i18n="markets.region2.desc">UAE, Saudi Arabia, Egypt, Ethiopia, Kenya, Nigeria, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <span class="region-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                        <div class="region-text">
+                            <h4 data-i18n="markets.region3">Europe & Americas</h4>
+                            <p data-i18n="markets.region3.desc">UK, Germany, France, Italy, Russia, USA, Canada, Brazil, Mexico</p>
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <span class="region-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                        <div class="region-text">
+                            <h4 data-i18n="markets.region4">Central Asia</h4>
+                            <p data-i18n="markets.region4.desc">Kazakhstan, Uzbekistan, Mongolia, Azerbaijan, Georgia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="markets-card reveal reveal-delay-2">
+                    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span data-i18n="markets.models.title">Partnership Models</span></h3>
+                    <div class="model-item">
+                        <span class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                        <div class="model-text">
+                            <h4 data-i18n="markets.model1">B2B — Medical Tourism Agencies</h4>
+                            <p data-i18n="markets.model1.desc">White-label intermediary services with competitive commission structures</p>
+                        </div>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span>
+                        <div class="model-text">
+                            <h4 data-i18n="markets.model2">B2B — Insurance & Corporate</h4>
+                            <p data-i18n="markets.model2.desc">Preferred provider arrangements for medical insurance and corporate health programs</p>
+                        </div>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                        <div class="model-text">
+                            <h4 data-i18n="markets.model3">B2C — Direct Patients</h4>
+                            <p data-i18n="markets.model3.desc">Full-service intermediary support for individual international patients</p>
+                        </div>
+                    </div>
+                    <div class="model-item">
+                        <span class="model-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span>
+                        <div class="model-text">
+                            <h4 data-i18n="markets.model4">Medical Second Opinions</h4>
+                            <p data-i18n="markets.model4.desc">Remote specialist consultations with China's leading physicians</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROADMAP ===== -->
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="roadmap.label">Growth Plan</span>
+                <h2 class="section-title" data-i18n="roadmap.title">Our Journey</h2>
+                <p class="section-subtitle" data-i18n="roadmap.subtitle">Building bridges in global healthcare, year by year</p>
+            </div>
+            <div class="roadmap-timeline">
+                <div class="milestone mil reveal reveal-delay-1">
+                    <div class="milestone-dot">2014</div>
+                    <h3 data-i18n="roadmap.step1.title">Founded in Suzhou</h3>
+                    <p data-i18n="roadmap.step1.desc">Beginning of the journey</p>
+                </div>
+                <div class="milestone mil reveal reveal-delay-2">
+                    <div class="milestone-dot">2017</div>
+                    <h3 data-i18n="roadmap.step2.title">1,000 Patients</h3>
+                    <p data-i18n="roadmap.step2.desc">Milestone reached</p>
+                </div>
+                <div class="milestone mil reveal reveal-delay-3">
+                    <div class="milestone-dot">2021</div>
+                    <h3 data-i18n="roadmap.step3.title">50+ Hospital Partners</h3>
+                    <p data-i18n="roadmap.step3.desc">Network expansion</p>
+                </div>
+                <div class="milestone mil reveal reveal-delay-4">
+                    <div class="milestone-dot">2024+</div>
+                    <h3 data-i18n="roadmap.step4.title">Global Expansion</h3>
+                    <p data-i18n="roadmap.step4.desc">Worldwide reach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="why" id="why">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="why.label">Why Choose Us</span>
+                <h2 class="section-title" data-i18n="why.title">Why Partner with Kiwitech?</h2>
+                <p class="section-subtitle" data-i18n="why.subtitle">The difference is in the details</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal reveal-delay-1">
+                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                    <h3 data-i18n="why.card1">Expert Matching</h3>
+                    <p data-i18n="why.card1.desc">We match patients with the exact specialist and hospital for their condition — no guesswork, no wasted time.</p>
+                </div>
+                <div class="why-card reveal reveal-delay-2">
+                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                    <h3 data-i18n="why.card2">Full Transparency</h3>
+                    <p data-i18n="why.card2.desc">Clear pricing, regular progress updates, and complete medical record transparency throughout your journey.</p>
+                </div>
+                <div class="why-card reveal reveal-delay-3">
+                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                    <h3 data-i18n="why.card3">Cultural Bridge</h3>
+                    <p data-i18n="why.card3.desc">We don't just translate language — we bridge cultural nuances, dietary needs, and local customs.</p>
+                </div>
+                <div class="why-card reveal reveal-delay-1" style="transition-delay:0.4s;">
+                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                    <h3 data-i18n="why.card4">Rapid Response</h3>
+                    <p data-i18n="why.card4.desc">Initial consultation within 48 hours. Treatment plans delivered within one week of case review.</p>
+                </div>
+                <div class="why-card reveal reveal-delay-2" style="transition-delay:0.5s;">
+                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                    <h3 data-i18n="why.card5">Dedicated Support</h3>
+                    <p data-i18n="why.card5.desc">A personal case manager assigned from day one — your single point of contact throughout the entire process.</p>
+                </div>
+                <div class="why-card reveal reveal-delay-3" style="transition-delay:0.6s;">
+                    <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <h3 data-i18n="why.card6">Cost Advantage</h3>
+                    <p data-i18n="why.card6.desc">40–60% cost savings vs. Western healthcare, without compromising on quality or safety standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COLLABORATION ===== -->
+    <section class="collab" id="collab">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-i18n="collab.label">Collaboration</span>
+                <h2 class="section-title" data-i18n="collab.title">Let's Work Together</h2>
+                <p class="section-subtitle" data-i18n="collab.subtitle">Flexible collaboration models for partners worldwide</p>
+            </div>
+            <div class="collab-grid">
+                <div class="collab-card reveal reveal-delay-1">
+                    <span class="collab-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    <h3 data-i18n="collab.card1.title">Agent Partnership</h3>
+                    <p data-i18n="collab.card1.desc">Refer patients and earn competitive commissions. We handle all logistics — you grow your business.</p>
+                </div>
+                <div class="collab-card reveal reveal-delay-2">
+                    <span class="collab-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span>
+                    <h3 data-i18n="collab.card2.title">Institutional Partnership</h3>
+                    <p data-i18n="collab.card2.desc">For hospitals, insurance providers, and corporate health programs — build a preferred referral channel.</p>
+                </div>
+                <div class="collab-card reveal reveal-delay-3">
+                    <span class="collab-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                    <h3 data-i18n="collab.card3.title">Strategic Alliance</h3>
+                    <p data-i18n="collab.card3.desc">Long-term partnership with revenue sharing, co-marketing, and exclusive access to partner hospitals.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2.5rem;">
+                <span class="collab-commission reveal reveal-delay-4" data-i18n="collab.commission">
+                    All partnerships include a transparent commission structure — no hidden fees, no surprises.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2 data-i18n="contact.title">Let's Start</h2>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                        <div class="contact-item-content">
+                            <h4 data-i18n="contact.name">Will Tang</h4>
+                            <p>SUZHOU KIWITECH CO., LTD.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div class="contact-item-content">
+                            <h4 data-i18n="contact.phone">WhatsApp / Mobile / WeChat</h4>
+                            <a href="https://wa.me/8618502187161">+86-18502187161</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                        <div class="contact-item-content">
+                            <h4 data-i18n="contact.website">Website</h4>
+                            <a href="https://www.kiwitk.com">www.kiwitk.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <div class="contact-item-content">
+                            <h4 data-i18n="contact.email">Email</h4>
+                            <a href="mailto:will.tang@kiwitk.com">will.tang@kiwitk.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                        <div class="contact-item-content">
+                            <h4 data-i18n="contact.address">Address</h4>
+                            <p>Suzhou Industrial Park, Suzhou, Jiangsu, China</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta-box reveal reveal-delay-1">
+                    <h3 data-i18n="contact.cta.title">Start Your Journey</h3>
+                    <p data-i18n="contact.cta.desc">Fill out our medical intake form and a case manager will contact you within 24 hours with a personalized consultation plan.</p>
+                    <a href="mailto:will.tang@kiwitk.com" class="btn-contact-submit">
+                        <span data-i18n="contact.cta.btn">Send Email</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 32 32" fill="none" width="20" height="20">
+                                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M16 9v14M9 16h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Kiwi<span class="logo-accent">tech</span></span>
+                    </a>
+                    <p data-i18n="footer.desc">Your trusted partner for world-class healthcare in China. Bridging borders, transforming lives.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.links">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#hospitals" data-i18n="nav.hospitals">Hospitals</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.services">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.services.hospital">Hospital Selection</a></li>
+                        <li><a href="#" data-i18n="footer.services.visa">Visa Assistance</a></li>
+                        <li><a href="#" data-i18n="footer.services.translation">Translation</a></li>
+                        <li><a href="#" data-i18n="footer.services.telemedicine">Telemedicine</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-i18n="footer.legal.privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="footer.legal.terms">Terms of Service</a></li>
+                        <li><a href="#" data-i18n="footer.legal.faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n="footer.copyright">© 2026 Suzhou Kiwitech Medical Services Co., Ltd. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="WeChat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+                    <a href="#" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="#" aria-label="Phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/i18n/lang/lang-names.js"></script>
+    <script src="js/i18n/lang/en.js"></script>
+    <script src="js/i18n/i18n-core.js"></script>
+</body>
+</html>
